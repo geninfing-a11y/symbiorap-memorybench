@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "selection_frozen": true,
+  "policy": {"default_configuration_first": true,"tuned_separate": true,"pin_versions": true,"same_platform": true,"matched_semantics": true},
+  "comparators": [
+    {"id":"sqlite","class":"embedded-durable-kv-via-sql","version":"PIN_AT_RUN","platforms":["linux","macos","windows"],"primary_hypotheses":["H2","H3","H7","H8","H9"],"notes":"WAL/FULL durability profile must be recorded; use only where semantics match."},
+    {"id":"rocksdb","class":"embedded-lsm-kv","version":"PIN_AT_RUN","platforms":["linux","macos","windows"],"primary_hypotheses":["H1","H2","H3","H4","H8","H9"],"notes":"Optional external comparator; exact package/build commit required."},
+    {"id":"faiss","class":"vector-retrieval","version":"PIN_AT_RUN","platforms":["linux","macos","windows"],"primary_hypotheses":["H5","H6","H9"],"notes":"Only retrieval/quality comparisons; persistence semantics reported separately."}
+  ]
+}
