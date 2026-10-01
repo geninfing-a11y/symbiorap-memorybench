@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_version": "m13-v1",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": true,
+      "verdict": "PENDING"
+    },
+    {
+      "id": "H2",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": true,
+      "verdict": "PENDING"
+    },
+    {
+      "id": "H3",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": true,
+      "verdict": "PENDING"
+    },
+    {
+      "id": "H4",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": true,
+      "verdict": "PENDING"
+    },
+    {
+      "id": "H5",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": true,
+      "verdict": "PENDING"
+    },
+    {
+      "id": "H6",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": true,
+      "verdict": "PENDING"
+    },
+    {
+      "id": "H7",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": true,
+      "verdict": "PENDING"
+    },
+    {
+      "id": "H8",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": true,
+      "verdict": "PENDING"
+    },
+    {
+      "id": "H9",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": true,
+      "verdict": "PENDING"
+    },
+    {
+      "id": "H10",
+      "primary": "preregistered",
+      "stress": "required",
+      "symbiorap_full": true,
+      "ablation_required": true,
+      "comparator_required": false,
+      "verdict": "PENDING"
+    }
+  ]
+}
