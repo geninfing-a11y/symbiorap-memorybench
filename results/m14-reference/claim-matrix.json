@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "publication_allowed": true,
+  "claim_scope": "claim-matrix-only",
+  "claims": [
+    {
+      "id": "C001",
+      "status": "SUPPORTED",
+      "public": true,
+      "wording": "On the tested native platforms, the full correctness suite passed: Windows x64 58/58 and Linux ARM64 62/62."
+    },
+    {
+      "id": "C002",
+      "status": "SUPPORTED",
+      "public": true,
+      "wording": "The native abrupt-termination recovery campaign completed 100/100 successful runs on Windows and 100/100 on Linux."
+    },
+    {
+      "id": "C003",
+      "status": "SUPPORTED",
+      "public": true,
+      "wording": "H6 task accuracy was 1.0 in every promotion repetition on both tested platforms."
+    },
+    {
+      "id": "C004",
+      "status": "SUPPORTED",
+      "public": true,
+      "wording": "At 32 workers, H8 retained a median 4 WAL records per ingest while median physical WAL syncs per ingest were 0.763 on Windows and 0.314 on Linux, demonstrating measured group batching on both tested systems."
+    },
+    {
+      "id": "C005",
+      "status": "SUPPORTED",
+      "public": true,
+      "wording": "Within each tested host, median H8 throughput increased from 1 to 32 workers (Windows 264.00→749.48 ops/s; Linux 129.13→1143.26 ops/s)."
+    },
+    {
+      "id": "C006",
+      "status": "SUPPORTED_WITH_SCOPE",
+      "public": true,
+      "wording": "Real SQLite and RocksDB adapters completed their matched durable single-key workloads with correctness PASS on both tested platforms."
+    },
+    {
+      "id": "C007",
+      "status": "SUPPORTED_WITH_SCOPE",
+      "public": true,
+      "wording": "FAISS IndexFlatL2 default execution passed correctness on the tested Linux ARM64 configuration, while the tested Windows configuration exhibited transient default-path retrieval failures; the separate Windows single-thread diagnostic passed."
+    },
+    {
+      "id": "C008",
+      "status": "NOT_SUPPORTED",
+      "public": false,
+      "wording": "SynapseFS or the SymbioRAP Memory Engine is faster than SQLite or RocksDB."
+    },
+    {
+      "id": "C009",
+      "status": "NOT_SUPPORTED",
+      "public": false,
+      "wording": "SynapseFS or the Memory Engine is faster than FAISS."
+    },
+    {
+      "id": "C010",
+      "status": "NOT_SUPPORTED",
+      "public": false,
+      "wording": "Absolute Windows-versus-Linux performance differences demonstrate operating-system or architecture superiority."
+    },
+    {
+      "id": "C011",
+      "status": "NOT_SUPPORTED",
+      "public": false,
+      "wording": "The benchmark establishes universal best-of-breed performance."
+    }
+  ]
+}
