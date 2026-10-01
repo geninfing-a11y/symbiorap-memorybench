@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "release": "v1.0.0-m14",
+  "milestone": "M14c",
+  "repository": "https://github.com/geninfing-a11y/symbiorap-memorybench",
+  "target_branch": "main",
+  "release_policy": {
+    "immutable_tag": true,
+    "publication_scope": "claim-matrix-only",
+    "proprietary_core_included": false,
+    "normalized_reference_evidence": true,
+    "raw_internal_promotion_archives_in_repo": false
+  },
+  "release_assets": [
+    "GitHub-generated source archive (zip)",
+    "GitHub-generated source archive (tar.gz)",
+    "SymbioRAP_MemoryBench_1.0.0-M14c_FULL_2026-10-01.zip",
+    "SymbioRAP_MemoryBench_M14_Reference_Evidence_2026-10-01.zip",
+    "SHA256SUMS"
+  ],
+  "verification": [
+    "python scripts/verify_reference.py",
+    "python scripts/verify_m14_publication.py",
+    "GitHub Actions CI on ubuntu-latest and windows-latest"
+  ],
+  "doi_readiness": {
+    "zenodo_metadata": ".zenodo.json",
+    "citation_metadata": "CITATION.cff",
+    "recommended_concept_doi": false,
+    "note": "Enable a Zenodo-GitHub integration before or after creating the GitHub release if a DOI is desired."
+  }
+}
