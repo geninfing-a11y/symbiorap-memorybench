@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile Python sources
+        run: python -m compileall -q benchmark scripts
+      - name: Verify M14 reference publication
+        run: python scripts/verify_reference.py
+      - name: Reject accidental proprietary adapter
+        shell: bash
+        run: |
+          test ! -e benchmark/adapters/symbiorap.py
+          ! grep -R --line-number --exclude-dir=.git '/opt/symbiorap-synapsefs' .
