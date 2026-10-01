@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use SymbioRAP MemoryBench, please cite this software and the exact release tag used."
+title: "SymbioRAP MemoryBench"
+type: software
+authors:
+  - name: "General Informatics"
+version: "1.0.0-m14"
+date-released: "2026-10-01"
+license: "Apache-2.0"
+repository-code: "https://github.com/geninfing-a11y/symbiorap-memorybench"
+abstract: "Architecture-neutral benchmark for persistent AI/agent memory, durable storage, retrieval, scaling, and crash recovery."
+keywords:
+  - persistent-memory
+  - agent-memory
+  - benchmark
+  - vector-retrieval
+  - crash-recovery
+  - storage
