@@ -1,0 +1,54 @@
+name: Build M14c release assets
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/release-assets.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Verify reference publication
+        run: |
+          python3 scripts/verify_reference.py
+          python3 scripts/verify_m14_publication.py
+      - name: Build release assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="v1.0.0-m14"
+          mkdir -p dist/full dist/reference
+          rsync -a --exclude='.git' --exclude='dist' ./ dist/full/symbiorap-memorybench/
+          cp results/m14-reference/results.json dist/reference/
+          cp results/m14-reference/results.csv dist/reference/
+          cp results/m14-reference/claim-matrix.json dist/reference/
+          cp results/m14-reference/OPEN_BENCHMARK_REPORT.md dist/reference/
+          cp docs/methodology.md dist/reference/
+          cp docs/known-limitations.md dist/reference/
+          cp RELEASE_NOTES_M14C.md dist/reference/
+          cp CITATION.cff dist/reference/
+          cp .zenodo.json dist/reference/
+          cp release/v1.0.0-m14/RELEASE_MANIFEST.json dist/reference/
+          (cd dist/full && zip -qr "../SymbioRAP_MemoryBench_1.0.0-M14c_FULL_2026-10-01.zip" symbiorap-memorybench)
+          (cd dist/reference && zip -qr "../SymbioRAP_MemoryBench_M14_Reference_Evidence_2026-10-01.zip" .)
+          cd dist
+          sha256sum SymbioRAP_MemoryBench_1.0.0-M14c_FULL_2026-10-01.zip                     SymbioRAP_MemoryBench_M14_Reference_Evidence_2026-10-01.zip > SHA256SUMS
+          printf '%s\n' "release=${VERSION}" "commit=${GITHUB_SHA}" > RELEASE_IDENTITY.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: symbiorap-memorybench-v1.0.0-m14-release-assets
+          path: |
+            dist/SymbioRAP_MemoryBench_1.0.0-M14c_FULL_2026-10-01.zip
+            dist/SymbioRAP_MemoryBench_M14_Reference_Evidence_2026-10-01.zip
+            dist/SHA256SUMS
+            dist/RELEASE_IDENTITY.txt
+          if-no-files-found: error
+          retention-days: 90
