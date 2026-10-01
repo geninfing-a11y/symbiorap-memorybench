@@ -26,4 +26,4 @@ jobs:
         shell: bash
         run: |
           test ! -e benchmark/adapters/symbiorap.py
-          ! grep -R --line-number --exclude-dir=.git '/opt/symbiorap-synapsefs' .
+          ! grep -R --line-number             --exclude-dir=.git             --exclude-dir=.github             '/opt/symbiorap-synapsefs' .
