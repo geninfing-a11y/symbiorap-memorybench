@@ -1,0 +1,31 @@
+{
+  "title": "SymbioRAP MemoryBench",
+  "description": "Open, architecture-neutral benchmark suite for persistent AI memory systems, durable storage, retrieval, scaling, and crash recovery, including the M14 normalized reference evidence.",
+  "creators": [
+    {
+      "name": "General Informatics"
+    }
+  ],
+  "license": "Apache-2.0",
+  "upload_type": "software",
+  "access_right": "open",
+  "version": "1.0.0-m14",
+  "publication_date": "2026-10-01",
+  "keywords": [
+    "persistent AI memory",
+    "agent memory",
+    "benchmark",
+    "durable storage",
+    "vector retrieval",
+    "crash recovery",
+    "SymbioRAP",
+    "SynapseFS"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/geninfing-a11y/symbiorap-memorybench",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
