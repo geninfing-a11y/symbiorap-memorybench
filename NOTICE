@@ -1,0 +1,4 @@
+SymbioRAP MemoryBench
+Copyright 2026 General Informatics
+
+This product includes benchmark methodology and comparator adapters developed as part of the SymbioRAP research program. Third-party libraries such as SQLite, RocksDB, FAISS, OpenBLAS/LAPACK and their respective licenses are not bundled by this notice and remain governed by their own licenses.
