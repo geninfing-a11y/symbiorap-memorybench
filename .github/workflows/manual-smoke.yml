@@ -1,0 +1,19 @@
+name: Manual comparator smoke
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install SQLite comparator dependency
+        run: sudo apt-get update && sudo apt-get install -y g++ libsqlite3-dev
+      - name: Build SQLite comparator
+        run: g++ -std=c++20 -O2 comparators/sqlite_comparator.cpp -lsqlite3 -o /tmp/memorybench-sqlite
+      - name: Smoke run
+        run: /tmp/memorybench-sqlite --records 64 --payload-bytes 128 --repetitions 1 --profile matched-full --root /tmp/memorybench-sqlite-smoke
