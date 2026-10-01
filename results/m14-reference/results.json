@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0.0",
+  "suite": "m14-open-benchmark-publication",
+  "publication_allowed": true,
+  "claim_scope": "claim-matrix-only",
+  "evidence": {
+    "windows": {
+      "label": "windows-native",
+      "correctness": {
+        "passed": 58,
+        "total": 58
+      },
+      "h7": {
+        "passed": 100,
+        "total": 100
+      },
+      "h6": {
+        "full_memory": {
+          "ingest_median_ops_s": 154.78,
+          "ingest_cv_percent": 37.7,
+          "query_median_ops_s": 1758.49,
+          "query_cv_percent": 8.73,
+          "task_accuracy": 1,
+          "repetitions": 10
+        }
+      },
+      "h8": {
+        "workers_1_median_ops_s": 264,
+        "workers_32_median_ops_s": 749.48,
+        "workers_32_cv_percent": 1.45,
+        "wal_records_per_ingest": 4,
+        "wal_syncs_per_ingest": 0.763,
+        "avg_group_batch": 5.251,
+        "repetitions": 10
+      },
+      "external": {
+        "sqlite": {
+          "version": "3.53.4",
+          "configuration": "matched-full",
+          "median_ops_s": 1132.88,
+          "cv_percent": 1.32,
+          "correctness": "PASS",
+          "semantic_class": "durable-kv"
+        },
+        "rocksdb": {
+          "version": "11.8.1",
+          "configuration": "matched-sync",
+          "median_ops_s": 1175.84,
+          "cv_percent": 1.46,
+          "correctness": "PASS",
+          "semantic_class": "durable-kv"
+        },
+        "faiss": {
+          "version": "1.14.3",
+          "configuration": "IndexFlatL2-default",
+          "median_ops_s": 245.61,
+          "cv_percent": 6.36,
+          "correctness": "NEGATIVE_RESULT",
+          "retrieval_failures": 9,
+          "semantic_class": "retrieval-only"
+        },
+        "faiss_single_thread_diagnostic": {
+          "version": "1.14.3",
+          "median_ops_s": 298.576,
+          "cv_percent": 3.84,
+          "correctness": "PASS",
+          "semantic_class": "retrieval-only",
+          "diagnostic_only": true
+        }
+      }
+    },
+    "linux": {
+      "label": "linux-arm64-native",
+      "correctness": {
+        "passed": 62,
+        "total": 62
+      },
+      "h7": {
+        "passed": 100,
+        "total": 100
+      },
+      "h6": {
+        "full_memory": {
+          "ingest_median_ops_s": 137.71,
+          "ingest_cv_percent": 4.67,
+          "query_median_ops_s": 551.55,
+          "query_cv_percent": 15.91,
+          "task_accuracy": 1,
+          "repetitions": 10
+        }
+      },
+      "h8": {
+        "workers_1_median_ops_s": 129.13,
+        "workers_32_median_ops_s": 1143.26,
+        "workers_32_cv_percent": 15.77,
+        "wal_records_per_ingest": 4,
+        "wal_syncs_per_ingest": 0.314,
+        "avg_group_batch": 12.772,
+        "repetitions": 10
+      },
+      "external": {
+        "sqlite": {
+          "version": "3.45.1",
+          "configuration": "matched-full",
+          "median_ops_s": 1304.9,
+          "cv_percent": 5.33,
+          "correctness": "PASS",
+          "semantic_class": "durable-kv"
+        },
+        "rocksdb": {
+          "version": "8.9.1",
+          "configuration": "matched-sync",
+          "median_ops_s": 866.83,
+          "cv_percent": 10.8,
+          "correctness": "PASS",
+          "semantic_class": "durable-kv"
+        },
+        "faiss": {
+          "version": "1.14.1",
+          "configuration": "IndexFlatL2-default",
+          "median_ops_s": 180.95,
+          "cv_percent": 2.72,
+          "correctness": "PASS",
+          "retrieval_failures": 0,
+          "semantic_class": "retrieval-only"
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Two concrete hosts were tested; results are not universal hardware claims.",
+    "Windows and Linux are separate populations and use different hardware and external-library versions.",
+    "SQLite/RocksDB durable-KV semantics are narrower than full memory-e2e semantics.",
+    "FAISS is retrieval-only and is not a durability comparator.",
+    "Negative results and high-variance runs are retained rather than filtered."
+  ]
+}
